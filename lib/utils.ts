@@ -1,7 +1,12 @@
 import type { Transaction, CategorySpending, MonthlyStats, Insight, Category } from './types';
+import { formatCurrency as formatCurrencyUtil, getCurrencySymbol as getCurrencySymbolUtil } from './currencies';
 
 // Export from currencies.ts for consistency
 export { formatCurrency, getCurrencySymbol } from './currencies';
+
+// Use internal references
+const formatCurrency = formatCurrencyUtil;
+const getCurrencySymbol = getCurrencySymbolUtil;
 
 // Format date
 export function formatDate(date: string): string {
