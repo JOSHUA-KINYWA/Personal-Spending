@@ -52,7 +52,7 @@ export function generatePDFReport(reportData: ReportData, currency: string = 'KE
 
   summaryData.forEach((item, index) => {
     // Box background
-    doc.setFillColor(...item.color, 0.1);
+    doc.setFillColor(item.color[0], item.color[1], item.color[2], 0.1);
     doc.roundedRect(xPos, yPos, boxWidth - 3, 25, 3, 3, 'F');
     
     // Label
@@ -64,7 +64,7 @@ export function generatePDFReport(reportData: ReportData, currency: string = 'KE
     // Value
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(...item.color);
+    doc.setTextColor(item.color[0], item.color[1], item.color[2]);
     doc.text(item.value, xPos + 3, yPos + 18);
     
     xPos += boxWidth;
