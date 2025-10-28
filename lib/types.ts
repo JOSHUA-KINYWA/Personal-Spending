@@ -81,7 +81,7 @@ export interface RecurringTransaction {
   category?: Category;
 }
 
-export interface TransactionWithCategory extends Transaction {
+export interface TransactionWithCategory extends Omit<Transaction, 'category'> {
   category: Category | null;
 }
 
